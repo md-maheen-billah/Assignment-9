@@ -29,6 +29,9 @@ const AuthProvider = ({ children }) => {
   const googleSignIn = () => {
     return signInWithPopup(auth, googleProvider);
   };
+
+  //github sign in
+
   //   observer
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
