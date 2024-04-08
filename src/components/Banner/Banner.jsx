@@ -20,7 +20,7 @@ const Banner = () => {
     <div className="flex items-center justify-between gap-4">
       <div className="bg-[url('././assets/sahape.svg')] w-full h-[400px] flex justify-center items-center rounded-lg">
         <div className="p-10">
-          <h2 className="animate__animated animate__bounce  text-4xl font-semibold text-[#EDF5E1] text-center">
+          <h2 className="animate__animated animate__bounce animate__infinite text-4xl font-semibold text-[#EDF5E1] text-center">
             Discover Your Perfect Piece of Land
           </h2>
           <p className="text-[#EDF5E1] mt-6 leading-8">
@@ -31,9 +31,11 @@ const Banner = () => {
             unique needs and aspirations.{" "}
           </p>
           <div className="flex justify-center mt-6">
-            <button className="btn font-semibold bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]">
-              Explore Now
-            </button>
+            <a href="#estate-s">
+              <button className="btn font-semibold bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]">
+                Explore Now
+              </button>
+            </a>
           </div>
         </div>
       </div>
