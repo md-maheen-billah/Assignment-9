@@ -51,22 +51,22 @@ const Banner = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={slide1} alt="" />
+            <img className="transition hover:scale-95" src={slide1} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={slide2} alt="" />
+            <img className="transition hover:scale-95" src={slide2} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={slide3} alt="" />
+            <img className="transition hover:scale-95" src={slide3} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={slide4} alt="" />
+            <img className="transition hover:scale-95" src={slide4} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={slide5} alt="" />
+            <img className="transition hover:scale-95" src={slide5} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={slide6} alt="" />
+            <img className="transition hover:scale-95" src={slide6} alt="" />
           </SwiperSlide>
         </Swiper>
       </div>

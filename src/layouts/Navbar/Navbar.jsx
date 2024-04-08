@@ -99,7 +99,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-2xl font-extrabold text-[#05386B] p-0"
+          className="btn btn-ghost text-2xl font-extrabold text-[#05386B] p-0 "
         >
           Terra Scope <FaTree />
         </Link>
