@@ -7,7 +7,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, googleSignIn } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
 
   const {
@@ -20,6 +20,16 @@ const Login = () => {
     const { email, password } = data;
 
     signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGoogle = () => {
+    googleSignIn()
       .then((result) => {
         console.log(result.user);
       })
@@ -97,7 +107,10 @@ const Login = () => {
             <div className="h-px bg-[#EDF5E1] w-full"></div>
           </div>
           <div>
-            <button className="flex  items-center gap-2 justify-center rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#8EE4AF] text-[#05386B] w-full py-2">
+            <button
+              onClick={handleGoogle}
+              className="flex  items-center gap-2 justify-center rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#8EE4AF] text-[#05386B] w-full py-2"
+            >
               <FaGoogle /> Login using Google
             </button>
           </div>
