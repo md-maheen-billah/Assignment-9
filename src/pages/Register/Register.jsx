@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+
+  const handleRegister = () => {
+    const
+    createUser(email, password);
+  }
   return (
     <div className="flex justify-center items-center my-10">
       <div>
@@ -19,7 +26,7 @@ const Register = () => {
             <br />
             <input
               className="mt-2 mb-4 p-2 rounded-md w-full bg-[#EDF5E1]"
-              type="name"
+              type="text"
               id="name"
               name="name"
               required
