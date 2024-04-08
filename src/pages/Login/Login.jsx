@@ -91,7 +91,7 @@ const Login = () => {
               <div className="relative">
                 <input
                   className="mt-2 mb-2 p-2 rounded-md w-full bg-[#EDF5E1]"
-                  type="password"
+                  type={showPass ? "text" : "password"}
                   id="password"
                   name="password"
                   required
