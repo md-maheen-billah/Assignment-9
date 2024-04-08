@@ -1,11 +1,33 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const { email, password } = data;
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="flex justify-center items-center my-12">
       <div>
@@ -13,43 +35,52 @@ const Login = () => {
           <h2 className="text-center text-2xl font-bold text-[#EDF5E1]">
             Login Your Account
           </h2>
-          <form className="mt-4">
-            <label className="text-[#EDF5E1]" htmlFor="email">
-              Email Address:
-            </label>
-            <br />
-            <input
-              className="mt-2 mb-4 p-2 rounded-md w-full bg-[#EDF5E1]"
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Enter Your Email Address"
-            />
-            <br />
-            <label className="text-[#EDF5E1]" htmlFor="password">
-              Password:
-            </label>
-            <br />
-            <div className="relative">
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
+            <div>
+              <label className="text-[#EDF5E1]" htmlFor="email">
+                Email Address:
+              </label>
               <input
-                className="mt-2 mb-2 p-2 rounded-md w-full bg-[#EDF5E1]"
-                type="password"
-                id="password"
-                name="password"
+                className="mt-2  p-2 rounded-md w-full bg-[#EDF5E1]"
+                type="email"
+                id="email"
+                name="email"
                 required
-                placeholder="Enter Your Password"
+                placeholder="Enter Your Email Address"
+                {...register("email", { required: true })}
               />
-              <span
-                className="absolute top-5 right-2 hover:cursor-pointer"
-                onClick={() => setShowPass(!showPass)}
-              >
-                {showPass ? (
-                  <IoEyeOff className="text-[#5CDB95]" />
-                ) : (
-                  <IoEye className="text-[#05386B]" />
+              {errors.email && (
+                <span className="text-[#5CDB95]">Email is required</span>
+              )}
+            </div>
+            <div>
+              <label className="text-[#EDF5E1]" htmlFor="password">
+                Password:
+              </label>
+              <div className="relative">
+                <input
+                  className="mt-2 mb-2 p-2 rounded-md w-full bg-[#EDF5E1]"
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                  placeholder="Enter Your Password"
+                  {...register("password", { required: true })}
+                />
+                <span
+                  className="absolute top-5 right-2 hover:cursor-pointer"
+                  onClick={() => setShowPass(!showPass)}
+                >
+                  {showPass ? (
+                    <IoEyeOff className="text-[#5CDB95]" />
+                  ) : (
+                    <IoEye className="text-[#05386B]" />
+                  )}
+                </span>
+                {errors.password && (
+                  <span className="text-[#5CDB95]">Password is required</span>
                 )}
-              </span>
+              </div>
             </div>
             <div className="mt-5">
               <input
