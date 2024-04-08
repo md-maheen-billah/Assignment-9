@@ -1,13 +1,17 @@
 import { useContext, useState } from "react";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -16,13 +20,20 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, password } = data;
+    const { email, password, name, image } = data;
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        updateUser(name, image)
+          .then(() => {
+            navigate(location?.state ? location.state : "/");
+          })
+          .catch();
+        toast.success("Registered Successfully");
+        console.log(result);
       })
       .catch((error) => {
+        toast.error(error.message);
         console.error(error);
       });
   };
@@ -34,8 +45,8 @@ const Register = () => {
           <h2 className="text-center text-2xl font-bold text-[#EDF5E1]">
             Register An Account
           </h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
-            <div>
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
+            <div className="mb-4">
               <label className="text-[#EDF5E1]" htmlFor="name">
                 Name:
               </label>
@@ -53,7 +64,7 @@ const Register = () => {
                 <span className="text-[#5CDB95]">Name is required</span>
               )}
             </div>
-            <div>
+            <div className="mb-4">
               <label className="text-[#EDF5E1]" htmlFor="image">
                 Image URL:
               </label>
@@ -70,7 +81,7 @@ const Register = () => {
                 <span className="text-[#5CDB95]">Image URL is required</span>
               )}
             </div>
-            <div>
+            <div className="mb-4">
               <label className="text-[#EDF5E1]" htmlFor="email">
                 Email Address:
               </label>
@@ -87,36 +98,39 @@ const Register = () => {
                 <span className="text-[#5CDB95]">Email is required</span>
               )}
             </div>
-            <div>
+            <div className="mb-4">
               <label className="text-[#EDF5E1]" htmlFor="password">
                 Password:
               </label>
               <div className="relative">
-                <input
-                  className="mt-2  p-2 rounded-md w-full bg-[#EDF5E1]"
-                  type="password"
-                  id="password"
-                  name="password"
-                  required
-                  placeholder="Enter A New Password"
-                  {...register("password", { required: true })}
-                />
-                {errors.password && (
-                  <span className="text-[#5CDB95]">Password is required</span>
-                )}
+                <div>
+                  <input
+                    className="mt-2  p-2 rounded-md w-full bg-[#EDF5E1]"
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    placeholder="Enter A New Password"
+                    {...register("password", { required: true })}
+                  />
+                  {errors.password && (
+                    <span className="text-[#5CDB95]">Password is required</span>
+                  )}
+                </div>
+
+                <span
+                  className="absolute top-5 right-2 hover:cursor-pointer"
+                  onClick={() => setShowPass(!showPass)}
+                >
+                  {showPass ? (
+                    <IoEyeOff className="text-[#5CDB95]" />
+                  ) : (
+                    <IoEye className="text-[#05386B]" />
+                  )}
+                </span>
               </div>
-              <span
-                className="absolute top-5 right-2 hover:cursor-pointer"
-                onClick={() => setShowPass(!showPass)}
-              >
-                {showPass ? (
-                  <IoEyeOff className="text-[#5CDB95]" />
-                ) : (
-                  <IoEye className="text-[#05386B]" />
-                )}
-              </span>
             </div>
-            <div className="mt-5">
+            <div className="mt-6">
               <input
                 className="rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] w-full py-2"
                 type="submit"
@@ -135,6 +149,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };

@@ -11,6 +11,34 @@ const Navbar = () => {
     logOut().then().catch();
   };
 
+  const navLinks2 = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? " border-2 border-[#05386B] text-[#05386B] px-4 bg-[#5CDB95] hover:bg-[#5CDB95]  py-2 rounded-xl font-bold"
+              : "text-[#05386B] font-semibold  px-4 py-2  rounded-xl hover:bg-[#379683] hover:text-[#EDF5E1] hover:duration-200"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/update"
+          className={({ isActive }) =>
+            isActive
+              ? "  border-2 border-[#05386B] text-[#05386B] px-4 bg-[#5CDB95] hover:bg-[#5CDB95] selection:bg-[#5CDB95]   py-2 rounded-xl font-bold"
+              : "text-[#05386B] font-semibold   px-4 py-2  rounded-xl hover:bg-[#379683] hover:text-[#EDF5E1] hover:duration-200"
+          }
+        >
+          Update Profile
+        </NavLink>
+      </li>
+    </>
+  );
   const navLinks = (
     <>
       <li>
@@ -62,14 +90,14 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2  bg-[#EDF5E1] rounded-box w-52"
           >
-            {navLinks}
+            {navLinks2}
           </ul>
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-2xl font-extrabold text-[#05386B]"
+          className="btn btn-ghost text-2xl font-extrabold text-[#05386B] p-0"
         >
           Terra Scope <FaTree />
         </Link>
@@ -95,16 +123,26 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#05386B] text-[#5CDB95] w-40 right-[-55px] rounded-box "
+                className="mt-3 z-[20] p-2 shadow menu menu-sm dropdown-content bg-[#EDF5E1] font-semibold  text-[#05386B]  w-40 right-2 lg:right-[-55px] rounded-box "
               >
                 <li>
                   <a className="justify-between">{user.displayName}</a>
+                </li>
+                <li className="lg:hidden">
+                  <div className="flex justify-center">
+                    <a
+                      onClick={handleSignOut}
+                      className="btn font-semibold bg-[#5CDB95] hover:bg-[#379683] text-[#05386B] border-none hover:text-[#EDF5E1]"
+                    >
+                      Sign Out
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>
             <a
               onClick={handleSignOut}
-              className="btn font-semibold bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]"
+              className="btn hidden lg:flex font-semibold bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]"
             >
               Sign Out
             </a>

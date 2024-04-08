@@ -1,14 +1,18 @@
 import { useContext, useState } from "react";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const { signInUser, googleSignIn, gitSignIn } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -22,8 +26,11 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
+        toast.success("Successfully Logged In");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
+        toast.error(error.message);
         console.error(error);
       });
   };
@@ -32,6 +39,8 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         console.log(result.user);
+        toast.success("Successfully Logged In");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
@@ -42,6 +51,8 @@ const Login = () => {
     gitSignIn()
       .then((result) => {
         console.log(result.user);
+        toast.success("Successfully Logged In");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
@@ -142,6 +153,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
