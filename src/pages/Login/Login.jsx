@@ -6,7 +6,6 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const { signInUser, googleSignIn, gitSignIn } = useContext(AuthContext);
@@ -153,7 +152,6 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };

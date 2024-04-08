@@ -5,7 +5,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
@@ -21,6 +20,17 @@ const Register = () => {
 
   const onSubmit = (data) => {
     const { email, password, name, image } = data;
+
+    if (password.length < 6) {
+      toast.error("Password should be at least 6 characters of more");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("Your password should have at least 1 Upper Case character");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      toast.error("Your password should have at least 1 Lower Case character");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -149,7 +159,6 @@ const Register = () => {
           </p>
         </div>
       </div>
-      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
