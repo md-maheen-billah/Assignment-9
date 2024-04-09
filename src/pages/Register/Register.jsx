@@ -119,9 +119,9 @@ const Register = () => {
                   onClick={() => setShowPass(!showPass)}
                 >
                   {showPass ? (
-                    <IoEyeOff className="text-[#5CDB95]" />
+                    <IoEyeOff className="text-[#5CDB95] transition hover:scale-110" />
                   ) : (
-                    <IoEye className="text-[#05386B]" />
+                    <IoEye className="text-[#05386B] transition hover:scale-110" />
                   )}
                 </span>
               </div>

@@ -9,37 +9,42 @@ const Land = ({ land }) => {
   }, []);
   return (
     <div data-aos="fade-up">
-      <div className="bg-[#05386B] p-5 rounded-lg relative h-[610px] space-y-4 transition hover:scale-105 hover:border-[#EDF5E1] border-[#05386B] border-2">
-        <img className="rounded-lg" src={land.image} alt="" />
-        <h2 className="text-[#EDF5E1] font-semibold text-lg">
-          {land.estate_title}
-        </h2>
-        <p className="text-[#5CDB95] font-semibold">
-          Property Type:{" "}
-          <span className="text-[#EDF5E1] font-normal">
-            {land.segment_name}
-          </span>
-        </p>
-        <p className="text-[#EDF5E1]">{land.description}</p>
-        <div className="flex items-center gap-10">
+      <div className="bg-[#05386B] relative h-[500px] space-y-3 transition hover:scale-105 hover:border-[#EDF5E1] border-[#05386B]">
+        <div className="relative">
+          <img className="" src={land.image} alt="" />
+          <div className="badge bg-[#5CDB95] border-[#5CDB95] text-[#05386B] absolute top-4 left-2 ">
+            {land.status}
+          </div>
+        </div>
+        <div className="px-4 space-y-2">
+          <h2 className="text-[#EDF5E1] font-semibold text-lg">
+            {land.estate_title}
+          </h2>
           <p className="text-[#5CDB95] font-semibold">
-            Price:{" "}
-            <span className="text-[#EDF5E1] font-normal">${land.price}</span>
-          </p>
-          <p className="text-[#5CDB95] font-semibold">
-            Status:{" "}
+            Property Type:{" "}
             <span className="text-[#EDF5E1] font-normal">
-              For {land.status}
+              {land.segment_name}
             </span>
           </p>
+          <div className="">
+            <p className="text-[#EDF5E1] text-3xl font-semibold">
+              ${land.price}
+            </p>
+          </div>
+          <div className="flex items-center justify-between">
+            <p className="text-[#5CDB95] font-semibold">
+              Location:{" "}
+              <span className="text-[#EDF5E1] font-normal">
+                {land.location}
+              </span>
+            </p>
+            <p className="text-[#5CDB95] font-semibold">
+              Area:{" "}
+              <span className="text-[#EDF5E1] font-normal">{land.area}</span>
+            </p>
+          </div>
         </div>
-        <p className="text-[#5CDB95] font-semibold">
-          Area: <span className="text-[#EDF5E1] font-normal">{land.area}</span>
-        </p>
-        <p className="text-[#5CDB95] font-semibold">
-          Location:{" "}
-          <span className="text-[#EDF5E1] font-normal">{land.location}</span>
-        </p>
+
         {/* <div>
         <p className="text-[#5CDB95] font-semibold">Facilities:</p>
         <ul>
