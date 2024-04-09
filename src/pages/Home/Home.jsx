@@ -1,13 +1,21 @@
 import Banner from "../../components/Banner/Banner";
 import { useLoaderData } from "react-router-dom";
 import Land from "../../components/Land/Land";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Marque from "../../components/Marque/Marque";
 
 const Home = () => {
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }, []);
   const lands = useLoaderData();
   return (
     <div className="my-6">
+      <Marque></Marque>
       <Banner></Banner>
-      <div className="mt-28">
+      <div className="mt-28" data-aos="fade-up">
         <h2
           id="estate-s"
           className="text-center text-[#05386B] font-bold text-3xl  animate__animated animate__pulse animate__infinite mb-4"
