@@ -47,10 +47,10 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center my-10">
+    <div className="flex justify-center items-center my-10 animate__animated animate__fadeInDownBig">
       <div>
         <div className="bg-[#05386B] py-5 px-8 rounded-xl">
-          <h2 className="text-center text-2xl font-bold text-[#EDF5E1]">
+          <h2 className="text-center text-2xl font-bold animate__animated animate__headShake  animate__slow animate__infinite text-[#EDF5E1]">
             Register An Account
           </h2>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
@@ -126,7 +126,7 @@ const Register = () => {
                 </span>
               </div>
             </div>
-            <div className="mt-6">
+            <div className="mt-6 animate__animated animate__pulse animate__infinite">
               <input
                 className="rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] w-full py-2"
                 type="submit"

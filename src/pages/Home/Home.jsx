@@ -18,7 +18,7 @@ const Home = () => {
       <div className="mt-28" data-aos="fade-up">
         <h2
           id="estate-s"
-          className="text-center text-[#05386B] font-bold text-3xl  animate__animated animate__pulse animate__infinite mb-4"
+          className="text-center text-[#05386B] font-bold text-3xl  animate__animated animate__tada animate__slow animate__infinite mb-4"
         >
           Estate Section
         </h2>

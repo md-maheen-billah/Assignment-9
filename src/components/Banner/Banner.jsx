@@ -17,10 +17,10 @@ import { Pagination } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <div className="flex items-center justify-between gap-4 mt-10">
+    <div className="flex items-center justify-between gap-4 mt-10 animate__animated animate__fadeInDownBig">
       <div className="bg-[url('././assets/sahape.svg')] w-full h-[400px] flex justify-center items-center rounded-lg">
         <div className="p-10">
-          <h2 className="animate__animated animate__bounce animate__infinite text-4xl font-semibold text-[#EDF5E1] text-center">
+          <h2 className="animate__animated animate__headShake  animate__slow animate__infinite text-4xl font-semibold text-[#EDF5E1] text-center">
             Discover Your Perfect Piece of Land
           </h2>
           <p className="text-[#EDF5E1] mt-6 leading-8">
@@ -32,7 +32,7 @@ const Banner = () => {
           </p>
           <div className="flex justify-center mt-6">
             <a href="#estate-s">
-              <button className="btn font-semibold bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]">
+              <button className="btn animate__animated animate__pulse animate__infinite font-semibold bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]">
                 Explore Now
               </button>
             </a>
