@@ -80,6 +80,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     loading,
     updateUser,
+    setUser,
+    setLoading,
   };
 
   return (

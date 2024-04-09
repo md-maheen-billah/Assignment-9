@@ -13,11 +13,7 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     const { email, password } = data;
@@ -79,9 +75,6 @@ const Login = () => {
                 placeholder="Enter Your Email Address"
                 {...register("email", { required: true })}
               />
-              {errors.email && (
-                <span className="text-[#5CDB95]">Email is required</span>
-              )}
             </div>
             <div>
               <label className="text-[#EDF5E1]" htmlFor="password">
@@ -107,9 +100,6 @@ const Login = () => {
                     <IoEye className="text-[#05386B]" />
                   )}
                 </span>
-                {errors.password && (
-                  <span className="text-[#5CDB95]">Password is required</span>
-                )}
               </div>
             </div>
             <div className="mt-5">

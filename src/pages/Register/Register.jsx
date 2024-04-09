@@ -1,22 +1,18 @@
 import { useContext, useState } from "react";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, user, setUser, setLoading, logOut } =
+    useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
-  const location = useLocation();
   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     const { email, password, name, image } = data;
@@ -33,14 +29,16 @@ const Register = () => {
     }
 
     createUser(email, password)
-      .then((result) => {
+      .then(() => {
         updateUser(name, image)
           .then(() => {
-            navigate(location?.state ? location.state : "/");
+            setUser({ ...user, name, image });
+            setLoading(true);
+            navigate("/login");
+            logOut().then().catch();
           })
           .catch();
-        toast.success("Registered Successfully");
-        console.log(result);
+        toast.success("Registered Successfully, Please Login");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -70,9 +68,6 @@ const Register = () => {
                 required
                 {...register("name", { required: true })}
               />
-              {errors.name && (
-                <span className="text-[#5CDB95]">Name is required</span>
-              )}
             </div>
             <div className="mb-4">
               <label className="text-[#EDF5E1]" htmlFor="image">
@@ -87,9 +82,6 @@ const Register = () => {
                 placeholder="Enter An Image URL"
                 {...register("image", { required: true })}
               />
-              {errors.image && (
-                <span className="text-[#5CDB95]">Image URL is required</span>
-              )}
             </div>
             <div className="mb-4">
               <label className="text-[#EDF5E1]" htmlFor="email">
@@ -104,9 +96,6 @@ const Register = () => {
                 placeholder="Enter An Email Address"
                 {...register("email", { required: true })}
               />
-              {errors.email && (
-                <span className="text-[#5CDB95]">Email is required</span>
-              )}
             </div>
             <div className="mb-4">
               <label className="text-[#EDF5E1]" htmlFor="password">
@@ -123,9 +112,6 @@ const Register = () => {
                     placeholder="Enter A New Password"
                     {...register("password", { required: true })}
                   />
-                  {errors.password && (
-                    <span className="text-[#5CDB95]">Password is required</span>
-                  )}
                 </div>
 
                 <span

@@ -108,7 +108,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        {user ? (
+        {user && user.photoURL ? (
           <>
             <div className="dropdown dropdown-hover mr-2">
               <div
