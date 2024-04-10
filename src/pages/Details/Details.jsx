@@ -25,7 +25,7 @@ const Details = () => {
         </div>
         <div className="bg-[#05386B] lg:w-4/12 p-5 lg:rounded-r-lg">
           <div className="px-4 space-y-4">
-            <h2 className="text-[#5CDB95] font-semibold 2xl:text-3xl lg:text-xl xl:text-2xl">
+            <h2 className="text-[#5CDB95] font-semibold 2xl:text-3xl lg:text-xl xl:text-2xl animate__animated animate__headShake  animate__slow animate__infinite">
               {land.estate_title}
             </h2>
             <p className="text-[#EDF5E1] 2xl:text-base lg:text-xs xl:text-base">
@@ -45,7 +45,9 @@ const Details = () => {
             </p>
             <p className="text-[#5CDB95] font-semibold 2xl:text-base lg:text-xs xl:text-base">
               Area:{" "}
-              <span className="text-[#EDF5E1] font-normal">{land.area}</span>
+              <span className="text-[#EDF5E1] font-normal">
+                {land.area} acres
+              </span>
             </p>
             <div>
               <p className="text-[#5CDB95] font-semibold 2xl:text-base lg:text-xs xl:text-base">

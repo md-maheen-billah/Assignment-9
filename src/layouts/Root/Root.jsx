@@ -7,7 +7,7 @@ const Root = () => {
   return (
     <div className="bg-[#5CDB95]">
       <Navbar></Navbar>
-      <div className="max-w-[1280px] mx-auto px-10">
+      <div className="max-w-[1280px] mx-auto lg:px-10">
         <Outlet></Outlet>
         <Toaster position="top-center" reverseOrder={false} />
       </div>

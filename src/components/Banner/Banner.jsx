@@ -17,7 +17,7 @@ import { Pagination } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <div className="flex items-center justify-between gap-4 mt-10 animate__animated animate__fadeInDownBig">
+    <div className="flex items-center justify-between gap-4 mt-10 animate__animated animate__fadeInUpBig">
       <div className="bg-[url('././assets/sahape.svg')] w-full h-[400px] flex justify-center items-center rounded-lg">
         <div className="p-10">
           <h2 className="animate__animated animate__headShake  animate__slow animate__infinite text-4xl font-semibold text-[#EDF5E1] text-center">

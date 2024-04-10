@@ -19,3 +19,10 @@ export const saveWishLand = (land) => {
   localStorage.setItem("lands", JSON.stringify(lands));
   toast.success("Wishlisted");
 };
+// delete
+export const deleteWishList = (id) => {
+  let lands = getWishLand();
+  const remaining = lands.filter((l) => l.id !== id);
+  localStorage.setItem("lands", JSON.stringify(remaining));
+  toast.success("Removed from Wishlist");
+};

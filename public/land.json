@@ -7,7 +7,7 @@
     "description": "This spacious farmhouse offers countryside living with ample land for farming. Situated on 5 acres of lush land, this beautiful farmhouse features a spacious interior with modern amenities and rustic charm.",
     "price": 500000,
     "status": "SALE",
-    "area": "5 acres",
+    "area": 5,
     "location": "Brussels, Belgium",
     "facilities": [
       "Fertile soil for agriculture",
@@ -24,7 +24,7 @@
     "description": "Experience the beauty of wide-open spaces and rustic charm on this expansive ranch. Nestled on 100 acres of pristine land, this sprawling ranch retreat offers unparalleled privacy and tranquility.",
     "price": 1200000,
     "status": "RENT",
-    "area": "100 acres",
+    "area": 100,
     "location": "Antwerp, Belgium",
     "facilities": [
       "Cattle corrals",
@@ -41,7 +41,7 @@
     "description": "Own a piece of wine country paradise with this stunning vineyard estate offered. Situated amidst rolling hills and lush vineyards, this picturesque estate embodies the essence of wine country living.",
     "price": 3500000,
     "status": "SALE",
-    "area": "50 acres",
+    "area": 50,
     "location": "Ghent, Belgium",
     "facilities": [
       "Grape vineyards",
@@ -58,7 +58,7 @@
     "description": "Escape to nature with this secluded forest property, perfect for outdoor enthusiasts. Immerse yourself in the tranquility of nature with this secluded forest retreat.",
     "price": 800000,
     "status": "RENT",
-    "area": "200 acres",
+    "area": 200,
     "location": "Liege, Belgium",
     "facilities": [
       "Mature forest trees",
@@ -75,7 +75,7 @@
     "description": "Step back in time with this historic plantation, offering grand architecture. Experience the grandeur of the past with this historic plantation estate.",
     "price": 2750000,
     "status": "SALE",
-    "area": "150 acres",
+    "area": 150,
     "location": "Charleroi, Belgium",
     "facilities": [
       "Manor house",
@@ -92,7 +92,7 @@
     "description": "Experience the joys of country living on this charming family farm, perfect for farming. Escape to the countryside with this charming family farm.",
     "price": 600000,
     "status": "RENT",
-    "area": "20 acres",
+    "area": 20,
     "location": "Bruges, Belgium",
     "facilities": [
       "Crop fields",

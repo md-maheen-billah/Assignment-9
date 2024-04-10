@@ -40,7 +40,9 @@ const Land = ({ land }) => {
             </p>
             <p className="text-[#5CDB95] font-semibold">
               Area:{" "}
-              <span className="text-[#EDF5E1] font-normal">{land.area}</span>
+              <span className="text-[#EDF5E1] font-normal">
+                {land.area} acres
+              </span>
             </p>
           </div>
         </div>
