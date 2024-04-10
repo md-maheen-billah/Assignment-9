@@ -7,11 +7,13 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../pages/Details/Details";
 import WishList from "../pages/WishList/WishList";
+import Error from "../pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
