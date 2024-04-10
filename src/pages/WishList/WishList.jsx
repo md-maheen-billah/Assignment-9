@@ -43,7 +43,7 @@ const WishList = () => {
       </Helmet>
       <div>
         <Marque></Marque>
-        <div className="flex justify-center lg:mt-8 mt-4 mx-2 lg:mx-0 animate__animated animate__fadeInDownBig">
+        <div className="flex justify-center lg:mt-8 mt-6 mx-2 lg:mx-0 ">
           <details className="dropdown">
             <summary className="btn font-semibold text-xl bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]">
               Sort By <RiArrowDropDownLine />
@@ -63,14 +63,14 @@ const WishList = () => {
           </details>
         </div>
       </div>
-      <div className="mt-24 space-y-6 -z-20">
+      <div className="space-y-6">
         <div className="animate__animated animate__fadeInUpBig">
           {lands.length < 1 && (
-            <div className="mt-36 mb-48">
+            <div className="lg:mt-36 lg:mb-48 mt-4 mb-8">
               <h1 className="text-4xl text-[#05386B] text-center">
                 No Wishlisted Property Found!
               </h1>
-              <div className="flex justify-center mt-12">
+              <div className="flex justify-center mt-6">
                 <Link
                   to="/"
                   className="btn animate__animated animate__pulse animate__infinite font-semibold text-lg bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] border-none hover:text-[#EDF5E1]"

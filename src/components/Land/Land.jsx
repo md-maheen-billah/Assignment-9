@@ -9,7 +9,7 @@ const Land = ({ land }) => {
   }, []);
   return (
     <div data-aos="fade-up">
-      <div className="bg-[#05386B] relative h-[500px] space-y-3 transition hover:scale-105 hover:border-[#EDF5E1] border-[#05386B]">
+      <div className="bg-[#05386B] relative space-y-4 pb-4 transition hover:scale-105 hover:border-[#EDF5E1] border-[#05386B]">
         <div className="relative">
           <img className="" src={land.image} alt="" />
           <div className="badge animate__animated animate__slower animate__swing animate__infinite font-medium bg-[#5CDB95] border-[#5CDB95] text-[#05386B] absolute top-4 left-4 ">
@@ -46,10 +46,10 @@ const Land = ({ land }) => {
             </p>
           </div>
         </div>
-        <div className=" flex justify-center">
+        <div className="flex justify-center">
           <Link
             to={`/land/${land.id}`}
-            className="absolute animate__animated animate__pulse animate__infinite bottom-6 rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] px-2  py-2"
+            className="animate__animated animate__pulse animate__infinite bottom-6 rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] px-2  py-2"
           >
             View Property
           </Link>

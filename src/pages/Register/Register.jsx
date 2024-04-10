@@ -47,7 +47,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center my-16 animate__animated animate__fadeInDownBig">
+    <div className="flex justify-center items-center mt-4 mb-8 lg:my-16 animate__animated animate__fadeInDownBig">
       <Helmet>
         <title>Register</title>
       </Helmet>

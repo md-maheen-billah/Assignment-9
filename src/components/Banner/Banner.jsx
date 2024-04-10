@@ -5,7 +5,6 @@ import slide3 from "../../assets/slide3.jpeg";
 import slide4 from "../../assets/slide4.jpeg";
 import slide5 from "../../assets/slide5.jpeg";
 import slide6 from "../../assets/slide6.jpeg";
-import "animate.css";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,13 +16,13 @@ import { Pagination } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <div className="flex items-center justify-between gap-4 mt-10 animate__animated animate__fadeInUpBig">
-      <div className="bg-[url('././assets/sahape.svg')] w-full h-[400px] flex justify-center items-center rounded-lg">
+    <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between gap-4 mt-6 lg:mt-10 animate__animated animate__fadeInUpBig">
+      <div className="bg-[url('././assets/sahape.svg')] w-full lg:w-9/12 lg:h-[400px] bg-cover flex justify-center items-center rounded-lg ">
         <div className="p-10">
-          <h2 className="animate__animated animate__headShake  animate__slow animate__infinite text-4xl font-semibold text-[#EDF5E1] text-center">
+          <h2 className="animate__animated animate__headShake  animate__slow animate__infinite text-3xl lg:text-4xl font-semibold text-[#EDF5E1] text-center">
             Discover Your Perfect Piece of Land
           </h2>
-          <p className="text-[#EDF5E1] mt-6 leading-8 animate__animated animate__fadeInRight">
+          <p className="text-[#EDF5E1] mt-6 lg:leading-8 lg:animate__animated animate__fadeInRight">
             At TerraScope, we specialize in connecting you with the ideal
             agricultural land, ranches, farms, vineyards, forests, plantations,
             and more. Whether you&#39;re looking to rent or buy, our platform
@@ -39,7 +38,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="w-full lg:w-3/12">
         <Swiper
           spaceBetween={20}
           slidesPerView={3}

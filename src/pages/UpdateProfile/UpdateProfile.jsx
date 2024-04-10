@@ -28,7 +28,7 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Update Profile</title>
       </Helmet>
-      <div className="flex justify-center items-center my-10 animate__animated animate__fadeInDownBig">
+      <div className="flex justify-center items-center mt-4 mb-8 lg:my-10 animate__animated animate__fadeInDownBig">
         <div>
           <div className="bg-[#05386B] py-8 px-8 rounded-xl">
             <h2 className="text-center text-2xl font-bold text-[#EDF5E1] animate__animated animate__headShake  animate__slow animate__infinite">

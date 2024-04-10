@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Marque = () => {
   return (
-    <div className="flex gap-6 p-4 bg-[#05386B] mt-10 animate__animated animate__fadeInDownBig">
-      <button className=" font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] px-6  py-3">
+    <div className="flex gap-6 p-2 lg:p-4 bg-[#05386B] mt-4 lg:mt-10 animate__animated animate__fadeInDownBig">
+      <button className=" font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] px-3 lg:px-6 py-2 lg:py-3">
         Latest
       </button>
       <Marquee>
