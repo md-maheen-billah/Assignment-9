@@ -48,7 +48,7 @@ const Navbar = () => {
               : "text-[#05386B] font-semibold   px-4 py-2  rounded-xl hover:bg-[#379683] hover:text-[#EDF5E1] hover:duration-200"
           }
         >
-          WishList
+          Wishlist
         </NavLink>
       </li>
     </>

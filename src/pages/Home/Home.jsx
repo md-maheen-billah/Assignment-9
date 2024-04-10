@@ -5,6 +5,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Marque from "../../components/Marque/Marque";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   useEffect(() => {
@@ -13,6 +14,9 @@ const Home = () => {
   const lands = useLoaderData();
   return (
     <div className="my-6">
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <Marque></Marque>
       <Banner></Banner>
       <div className="mt-28" data-aos="fade-up">

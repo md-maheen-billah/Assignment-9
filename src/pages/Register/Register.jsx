@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUser, setUser, setLoading } =
@@ -47,6 +48,9 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center my-16 animate__animated animate__fadeInDownBig">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div>
         <div className="bg-[#05386B] py-5 px-8 rounded-xl">
           <h2 className="text-center text-2xl font-bold animate__animated animate__headShake  animate__slow animate__infinite text-[#EDF5E1]">

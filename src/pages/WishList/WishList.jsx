@@ -4,6 +4,7 @@ import WishCard from "./WishCard";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Marque from "../../components/Marque/Marque";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const WishList = () => {
   const [lands, setLands] = useState([]);
@@ -37,6 +38,9 @@ const WishList = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Wishlist</title>
+      </Helmet>
       <div>
         <Marque></Marque>
         <div className="flex justify-center lg:mt-8 mt-4 mx-2 lg:mx-0 animate__animated animate__fadeInDownBig">

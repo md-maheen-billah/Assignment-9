@@ -1,13 +1,11 @@
 import { useContext } from "react";
-// import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
   const { user, updateUser, setUser, setLoading } = useContext(AuthContext);
-
-  // const { register } = useForm();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -25,19 +23,11 @@ const UpdateProfile = () => {
       .catch();
   };
 
-  // const onSubmit = (data) => {
-  //   const { name, image } = data;
-  //   updateUser(name, image)
-  //     .then(() => {
-  //       setUser({ ...user, name, image });
-  //       toast.success("Updated Successfully");
-  //       navigate("/update");
-  //     })
-  //     .catch();
-  // };
-
   return (
     <div>
+      <Helmet>
+        <title>Update Profile</title>
+      </Helmet>
       <div className="flex justify-center items-center my-10 animate__animated animate__fadeInDownBig">
         <div>
           <div className="bg-[#05386B] py-8 px-8 rounded-xl">

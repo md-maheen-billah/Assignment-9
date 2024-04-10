@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { saveWishLand } from "../../utility";
+import { Helmet } from "react-helmet-async";
 const Details = () => {
   const lands = useLoaderData();
   const { id } = useParams();
@@ -12,6 +13,9 @@ const Details = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>{land.estate_title}</title>
+      </Helmet>
       <div className="flex my-12 flex-col lg:flex-row">
         <div className="lg:w-8/12 relative">
           <img
