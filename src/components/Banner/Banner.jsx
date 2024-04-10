@@ -23,7 +23,7 @@ const Banner = () => {
           <h2 className="animate__animated animate__headShake  animate__slow animate__infinite text-4xl font-semibold text-[#EDF5E1] text-center">
             Discover Your Perfect Piece of Land
           </h2>
-          <p className="text-[#EDF5E1] mt-6 leading-8">
+          <p className="text-[#EDF5E1] mt-6 leading-8 animate__animated animate__fadeInRight">
             At TerraScope, we specialize in connecting you with the ideal
             agricultural land, ranches, farms, vineyards, forests, plantations,
             and more. Whether you&#39;re looking to rent or buy, our platform

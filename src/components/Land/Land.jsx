@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 // import { VscDebugBreakpointLog } from "react-icons/vsc";
 const Land = ({ land }) => {
   useEffect(() => {
@@ -59,9 +60,12 @@ const Land = ({ land }) => {
         </ul>
       </div> */}
         <div className=" flex justify-center">
-          <button className="absolute animate__animated animate__pulse animate__infinite bottom-6 rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] px-2  py-2">
+          <Link
+            to={`/land/${land.id}`}
+            className="absolute animate__animated animate__pulse animate__infinite bottom-6 rounded-lg font-bold hover:duration-300 hover:cursor-pointer hover:text-[#EDF5E1] hover:bg-[#379683] bg-[#5CDB95] text-[#05386B] px-2  py-2"
+          >
             View Property
-          </button>
+          </Link>
         </div>
       </div>
     </div>

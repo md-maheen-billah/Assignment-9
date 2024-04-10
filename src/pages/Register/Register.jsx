@@ -47,14 +47,14 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center my-10 animate__animated animate__fadeInDownBig">
+    <div className="flex justify-center items-center my-16 animate__animated animate__fadeInDownBig">
       <div>
         <div className="bg-[#05386B] py-5 px-8 rounded-xl">
           <h2 className="text-center text-2xl font-bold animate__animated animate__headShake  animate__slow animate__infinite text-[#EDF5E1]">
             Register An Account
           </h2>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
-            <div className="mb-4">
+            <div className="mb-4 ">
               <label className="text-[#EDF5E1]" htmlFor="name">
                 Name:
               </label>
