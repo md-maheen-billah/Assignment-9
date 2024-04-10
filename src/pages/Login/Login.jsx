@@ -8,7 +8,8 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { signInUser, googleSignIn, gitSignIn } = useContext(AuthContext);
+  const { signInUser, googleSignIn, gitSignIn, setLoading } =
+    useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,10 +24,12 @@ const Login = () => {
         console.log(result.user);
         toast.success("Successfully Logged In");
         navigate(location?.state ? location.state : "/");
+        setLoading(false);
       })
       .catch((error) => {
         toast.error(error.message);
         console.error(error);
+        setLoading(false);
       });
   };
 
