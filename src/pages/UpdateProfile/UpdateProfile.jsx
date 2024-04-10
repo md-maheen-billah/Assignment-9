@@ -5,7 +5,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const UpdateProfile = () => {
-  const { user, updateUser, setUser } = useContext(AuthContext);
+  const { user, updateUser, setUser, setLoading } = useContext(AuthContext);
 
   // const { register } = useForm();
 
@@ -14,12 +14,13 @@ const UpdateProfile = () => {
     const name = e.target.name.value;
     console.log(name);
     const image = e.target.image.value;
+    const email = e.target.email.value;
 
     updateUser(name, image)
       .then(() => {
-        setUser({ ...user, name, image });
+        setUser({ displayName: name, photoURL: image, email: email });
         toast.success("Updated Successfully");
-        window.location.href = "/update";
+        setLoading(false);
       })
       .catch();
   };

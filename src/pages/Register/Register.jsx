@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, updateUser, user, setUser, setLoading } =
+  const { createUser, updateUser, setUser, setLoading } =
     useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
@@ -32,10 +32,9 @@ const Register = () => {
       .then(() => {
         updateUser(name, image)
           .then(() => {
-            setUser({ ...user, name, image });
-            setLoading(true);
+            setUser({ displayName: name, photoURL: image, email: email });
             navigate("/");
-            window.location.href = "/";
+            setLoading(false);
           })
           .catch();
         toast.success("Registered Successfully");
