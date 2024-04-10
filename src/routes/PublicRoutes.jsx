@@ -6,6 +6,7 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../pages/Details/Details";
+import WishList from "../pages/WishList/WishList";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +28,18 @@ const router = createBrowserRouter([
         loader: () => fetch("/land.json"),
       },
       {
-        path: "/details",
+        path: "/update",
         element: (
           <PrivateRoute>
             <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/wishlist",
+        element: (
+          <PrivateRoute>
+            <WishList></WishList>
           </PrivateRoute>
         ),
       },

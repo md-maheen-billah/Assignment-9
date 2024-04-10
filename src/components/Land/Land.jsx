@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-// import { VscDebugBreakpointLog } from "react-icons/vsc";
 const Land = ({ land }) => {
   useEffect(() => {
     Aos.init({ duration: 700 });
@@ -45,20 +44,6 @@ const Land = ({ land }) => {
             </p>
           </div>
         </div>
-
-        {/* <div>
-        <p className="text-[#5CDB95] font-semibold">Facilities:</p>
-        <ul>
-          {land.facilities.map((facility, index) => (
-            <li key={index}>
-              <div className="flex items-center gap-2 text-[#EDF5E1] font-normal">
-                <VscDebugBreakpointLog />
-                {facility}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div> */}
         <div className=" flex justify-center">
           <Link
             to={`/land/${land.id}`}

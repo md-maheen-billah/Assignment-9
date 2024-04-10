@@ -39,6 +39,18 @@ const Navbar = () => {
           Update Profile
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/wishlist"
+          className={({ isActive }) =>
+            isActive
+              ? "  border-2 border-[#05386B] text-[#05386B] px-4 bg-[#5CDB95] hover:bg-[#5CDB95] selection:bg-[#5CDB95]   py-2 rounded-xl font-bold"
+              : "text-[#05386B] font-semibold   px-4 py-2  rounded-xl hover:bg-[#379683] hover:text-[#EDF5E1] hover:duration-200"
+          }
+        >
+          WishList
+        </NavLink>
+      </li>
     </>
   );
   const navLinks = (
@@ -65,6 +77,18 @@ const Navbar = () => {
           }
         >
           Update Profile
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/wishlist"
+          className={({ isActive }) =>
+            isActive
+              ? " border-2 border-[#05386B] focus:hover:bg-[#379683] focus:hover:text-[#EDF5E1] focus:hover:border-[#379683] hover:border-[#379683] hover:text-[#EDF5E1] bg-[#05386B] focus:text-[#5CDB95] focus:bg-[#05386B] hover:bg-[#379683] text-[#5CDB95] px-4  py-2 rounded-xl font-bold"
+              : "text-[#05386B] font-semibold border-2 border-[#5CDB95] bg-[#5CDB95] px-4 py-2  rounded-xl hover:bg-[#379683] hover:border-[#379683] hover:text-[#EDF5E1]  hover:duration-200"
+          }
+        >
+          Wishlist
         </NavLink>
       </li>
     </>
