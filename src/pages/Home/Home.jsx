@@ -49,7 +49,7 @@ const Home = () => {
             id="estate-s"
             className="text-center text-[#05386B] font-bold text-3xl  animate__animated animate__headShake  animate__slow animate__infinite mb-4"
           >
-            Look For Us
+            Looking For Us?
           </h2>
           <p className="text-center text-[#05386B]">
             Below you will be able to see the current location of our
