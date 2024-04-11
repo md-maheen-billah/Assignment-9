@@ -8,11 +8,18 @@ import Marque from "../../components/Marque/Marque";
 import { Helmet } from "react-helmet-async";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { Icon } from "leaflet";
 
 const Home = () => {
   useEffect(() => {
     Aos.init({ duration: 700 });
   }, []);
+
+  const customIcon = new Icon({
+    iconUrl: "https://i.ibb.co/hRd8Ppt/place-marker-15397-1.png",
+    iconSize: [38, 38],
+  });
+
   const lands = useLoaderData();
   return (
     <div className="mb-6">
@@ -59,7 +66,7 @@ const Home = () => {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[50.892, 4.4182]}>
+            <Marker position={[50.892, 4.4182]} icon={customIcon}>
               <Popup>We are here!</Popup>
             </Marker>
           </MapContainer>
