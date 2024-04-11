@@ -21,3 +21,4 @@ The project utilizes the following NPM packages:
 -  Animate.css: Utilizes the Animate.css library for adding CSS animations to elements.
 -  React Hook Form: Implements React Hook Form for efficient form handling and validation in React applications.
 -  Swiper Slider: Utilizes the Swiper slider library for creating responsive and touch-enabled sliders in the application.
+-  React-Leaflet: Integrates the React-Leaflet library for building interactive maps with Leaflet and React.
