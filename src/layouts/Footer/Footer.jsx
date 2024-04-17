@@ -1,9 +1,11 @@
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaTree } from "react-icons/fa6";
+import "../Footer/footer.css";
+
 const Footer = () => {
   return (
     <div>
-      <footer className="footer footer-center p-4 bg-[#05386B] text-[#5CDB95]">
+      <footer className="footer foote footer-center p-4 bg-[#05386B] text-[#5CDB95]">
         <aside>
           <h2 className="flex items-center text-2xl gap-2">
             Terra Scope <FaTree />
